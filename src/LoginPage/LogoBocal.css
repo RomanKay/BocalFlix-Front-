@@ -1,0 +1,11 @@
+#FlixLogo {
+  display: inline;
+  position: absolute;
+  top: 1%;
+  padding-left: 3%;
+  padding-top: 1%;
+}
+
+#FlixLogo img {
+  width: 70%;
+}
