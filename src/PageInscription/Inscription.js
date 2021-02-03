@@ -1,1 +1,3 @@
-import "/.inscription.css";
+function Inscription() {}
+
+export default Inscription;

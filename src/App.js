@@ -1,6 +1,7 @@
 import "./App.css";
 
-// Salut c'est Roman //
+// Import Formulaire Inscription//
+import Inscription from "./PageInscription/Inscription";
 
 function App() {
   return (
