@@ -1,6 +1,8 @@
-import Forms from "react-bootstrap/Button";
+{
+  /*import Forms from "react-bootstrap/Button";
 
-function Inscription() {
+
+  /*function Inscription() {
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-3">Fluid jumbo heading</h1>
@@ -21,3 +23,5 @@ function Inscription() {
 }
 
 export default Inscription;
+/*/
+}
