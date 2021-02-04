@@ -17,15 +17,15 @@ function Inscription() {
             <Link
               className="justify-content-sm-center"
               id="buttonIdentity"
-              to="/inscription"
+              to="/"
             >
               S'identifier
             </Link>
           </Col>
         </Form.Group>
       </div>
-      <Row className="justify-content-sm-center">
-        <Col xs={12} sm={10} md={8} lg={5} xl={5}>
+      <Row id="rowForm" className="justify-content-sm-center">
+        <Col xs={12} sm={10} md={8} lg={6} xl={6}>
           <Form id="formInscriptionContent">
             <h2 className="inscriptionTitle">Informations personnels</h2>
             {/******** NOM - PRENOM *********/}
@@ -117,7 +117,7 @@ function Inscription() {
 
             {/******** BOUTTON *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col xs={12} sm={10} md={8} lg={5} xl={3}>
+              <Col xs={12} sm={10} md={8} lg={3} xl={3}>
                 <Form.Group>
                   <Col sm="12">
                     <Link

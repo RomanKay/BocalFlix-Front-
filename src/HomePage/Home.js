@@ -1,8 +1,10 @@
 // Import Css
 import "./home.css";
 
+import Slider from "../Carousel/Carousel";
+
 function Home() {
-  return <h1>Page Principal</h1>;
+  return <Slider />;
 }
 
 export default Home;
