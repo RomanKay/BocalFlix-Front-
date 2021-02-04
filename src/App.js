@@ -3,12 +3,19 @@ import "./App.css";
 
 // Import Formulaire Inscription//
 import Inscription from "./PageInscription/Inscription";
+// Import Page de co //
+import LogoBocal from "./LoginPage/LogoBocal.js";
+import BackgroundLogin from "./LoginPage/BackgroundLogin.js";
+import LoginForm from "./LoginPage/LoginForm.js";
 
 function App() {
   return (
     <div className="App">
       <header className="AppHeader">
-        <Inscription></Inscription>
+        <LogoBocal />
+        <BackgroundLogin />
+        <LoginForm />
+        <Inscription />
       </header>
     </div>
   );
