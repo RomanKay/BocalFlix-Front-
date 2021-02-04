@@ -3,15 +3,57 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Row";
 import logo from "./Images/logo.png";
-import { Link } from "react-router-dom";
+
+import { useState } from "react";
 
 import "./inscription.css";
 
-function Inscription() {
-  function Subscribe() {
-    console.log("Le lien a été cliqué.");
+function Inscription(props) {
+  /* Variable d'état */
+  let [newUser, setUser] = useState({
+    nom: "",
+    prenom: "",
+    mail: "",
+    pass: "",
+    carte: "",
+    cvv: "",
+  });
+
+  //Mise a jour des valeur user
+  function handleInput(e) {
+    setUser({ ...newUser, [e.target.name]: e.target.value });
+    console.log(e.target.value);
   }
 
+  // Fonction s'inscrire
+  function Subscribe(e) {
+    e.preventDefault();
+    console.log(newUser);
+    if (
+      (newUser.nom,
+      newUser.prenom,
+      newUser.pass,
+      newUser.mail,
+      newUser.carte,
+      newUser.cvv != "") &
+      (newUser.nom,
+      newUser.prenom,
+      newUser.pass,
+      newUser.mail,
+      newUser.carte,
+      newUser.cvv != undefined)
+    ) {
+      props.history.push("/home");
+    } else {
+      alert("Vous n'avez pas remplie tous les champs");
+    }
+  }
+
+  //Lien page login
+  function LinkLoginPage(e) {
+    e.preventDefault();
+    props.history.push("/");
+  }
   return (
     <div id="containerInscription">
       <div id="containerLogoF">
@@ -19,8 +61,8 @@ function Inscription() {
         <Form.Group>
           <Col sm="12">
             <Button
+              onClick={LinkLoginPage}
               type="submit"
-              className="justify-content-sm-center"
               id="buttonIdentity"
               to="/"
             >
@@ -35,13 +77,25 @@ function Inscription() {
             <h2 className="inscriptionTitle">Informations personnels</h2>
             {/******** NOM - PRENOM *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col sm="4">
+              <Col xs={12} sm="4">
                 <Form.Label>Nom : </Form.Label>
-                <Form.Control placeholder="Votre nom..." />
+                <Form.Control
+                  type="text"
+                  onChange={handleInput}
+                  value={newUser.nom}
+                  name="nom"
+                  placeholder="Votre nom..."
+                />
               </Col>
               <Col sm="4">
                 <Form.Label>Prénom: </Form.Label>
-                <Form.Control placeholder="Votre prénom..." />
+                <Form.Control
+                  type="text"
+                  value={newUser.prenom}
+                  onChange={handleInput}
+                  name="prenom"
+                  placeholder="Votre prénom..."
+                />
               </Col>
             </Form.Row>
             {/******** Email *********/}
@@ -50,7 +104,10 @@ function Inscription() {
                 <Form.Group>
                   <Form.Label>Email : </Form.Label>
                   <Form.Control
+                    onChange={handleInput}
                     type="email"
+                    value={newUser.mail}
+                    name="mail"
                     placeholder="Entrer votre email..."
                   />
                 </Form.Group>
@@ -62,6 +119,9 @@ function Inscription() {
                 <Form.Group>
                   <Form.Label>Mot de passe : </Form.Label>
                   <Form.Control
+                    value={newUser.pass}
+                    onChange={handleInput}
+                    name="pass"
                     type="password"
                     placeholder="Votre mot de passe..."
                   />
@@ -112,11 +172,23 @@ function Inscription() {
             <Form.Row className="justify-content-sm-center">
               <Col sm="6">
                 <Form.Label>Numéro de carte : </Form.Label>
-                <Form.Control placeholder="294465645..." />
+                <Form.Control
+                  value={newUser.carte}
+                  type="text"
+                  onChange={handleInput}
+                  name="carte"
+                  placeholder="294465645..."
+                />
               </Col>
               <Col sm="2">
                 <Form.Label>CVV : </Form.Label>
-                <Form.Control placeholder="294..." />
+                <Form.Control
+                  value={newUser.cvv}
+                  type="text"
+                  onChange={handleInput}
+                  name="cvv"
+                  placeholder="294..."
+                />
               </Col>
             </Form.Row>
 
@@ -128,6 +200,7 @@ function Inscription() {
                     <Button
                       onClick={Subscribe}
                       id="buttonInscrire"
+                      type="submit"
                       as="input"
                       value="S'inscrire"
                       className="justify-content-sm-center"
