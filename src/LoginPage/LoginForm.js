@@ -1,5 +1,6 @@
 import "./LoginForm.css";
-
+import { Link } from "react-router-dom";
+import BackgroundLogin from "./BackgroundLogin";
 function FormLog() {
   return (
     <div className="content">
@@ -25,7 +26,8 @@ function FormLog() {
         </span>
 
         <p className="Visite">
-          Première visite sur Bocalflix? <a href="#">S'incrire</a>
+          Première visite sur Bocalflix?{" "}
+          <Link to="/inscription">S'inscrire</Link>
         </p>
         <div id="Social">
           <img src="Images/Social/facebook.png" alt="" />
