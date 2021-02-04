@@ -23,7 +23,9 @@ function FormLog() {
             name="Mot de passe"
             placeholder="Entrez votre mot de passe"
           />
-          <input type="submit" value="connexion" />
+          <Link id="Conect" to="/home">
+            Connexion
+          </Link>
           <span className="box">
             <input className="LogInp" type="checkbox" id="save" />
             <label htmlFor="save">Se souvenir de moi</label>
