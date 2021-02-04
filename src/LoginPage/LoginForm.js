@@ -13,17 +13,18 @@ function FormLog() {
 
           <input
             type="text"
-            className="inp"
+            className="inP"
             name="mail"
             id=""
             placeholder="Entrez votre email"
           />
           <input
+            className="inP"
             type="text"
             name="Mot de passe"
             placeholder="Entrez votre mot de passe"
           />
-          <input type="submit" value="connexion" />
+          <input className="inP" type="submit" value="connexion" />
           <span className="box">
             <input className="LogInp" type="checkbox" id="save" />
             <label htmlFor="save">Se souvenir de moi</label>
