@@ -10,25 +10,22 @@ import "./inscription.css";
 function Inscription() {
   return (
     <div id="containerInscription">
+      <div id="containerLogoF">
+        <img id="inscriptionLogo" alt="Bocalflix" src={logo} />
+        <Form.Group>
+          <Col sm="12">
+            <Link
+              className="justify-content-sm-center"
+              id="buttonIdentity"
+              to="/inscription"
+            >
+              S'identifier
+            </Link>
+          </Col>
+        </Form.Group>
+      </div>
       <Row className="justify-content-sm-center">
         <Col xs={12} sm={10} md={8} lg={5} xl={5}>
-          <div id="containerLogoF">
-            <img id="inscriptionLogo" alt="Bocalflix" src={logo} />
-            <Form.Group>
-              <Col sm="12">
-                <a>
-                  <Button
-                    id="buttonIdentity"
-                    href="#"
-                    className="justify-content-sm-center"
-                    type="submit"
-                  >
-                    S'identifier
-                  </Button>
-                </a>
-              </Col>
-            </Form.Group>
-          </div>
           <Form id="formInscriptionContent">
             <h2 className="inscriptionTitle">Informations personnels</h2>
             {/******** NOM - PRENOM *********/}
@@ -120,10 +117,14 @@ function Inscription() {
 
             {/******** BOUTTON *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col sm="6">
-                <Form.Group id="button">
+              <Col xs={12} sm={10} md={8} lg={5} xl={3}>
+                <Form.Group>
                   <Col sm="12">
-                    <Link className="justify-content-sm-center" to="/home">
+                    <Link
+                      id="buttonInscrire"
+                      className="justify-content-sm-center"
+                      to="/home"
+                    >
                       S'inscrire
                     </Link>
                   </Col>

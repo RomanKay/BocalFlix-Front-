@@ -1,16 +1,16 @@
-#button {
+#buttonInscrire {
   background-color: rgb(220, 47, 47);
   border-radius: 2px;
   text-align: center;
-  margin: 15%;
+
   font-size: 1.7em;
-  padding: 1% 2% 1% 2%;
+
+  color: white;
 }
 #formInscriptionContent {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   border-radius: 10px;
@@ -18,7 +18,7 @@
 }
 
 #containerLogoF {
-  margin: 2% 5% 0% 5%;
+  margin: 0% 5% 0% 5%;
   font-size: 1.5em;
   display: flex;
   align-items: center;
@@ -31,7 +31,6 @@
   text-align: center;
   font-size: 1em;
   margin: auto;
-  padding: 0% 70% 0% 70%;
 
   color: white;
 }
@@ -56,4 +55,8 @@
   background-size: cover;
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+#rowform {
+  width: 100%;
 }
