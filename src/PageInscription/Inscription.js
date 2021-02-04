@@ -8,19 +8,24 @@ import { Link } from "react-router-dom";
 import "./inscription.css";
 
 function Inscription() {
+  function Subscribe() {
+    console.log("Le lien a été cliqué.");
+  }
+
   return (
     <div id="containerInscription">
       <div id="containerLogoF">
         <img id="inscriptionLogo" alt="Bocalflix" src={logo} />
         <Form.Group>
           <Col sm="12">
-            <Link
+            <Button
+              type="submit"
               className="justify-content-sm-center"
               id="buttonIdentity"
               to="/"
             >
               S'identifier
-            </Link>
+            </Button>
           </Col>
         </Form.Group>
       </div>
@@ -117,16 +122,16 @@ function Inscription() {
 
             {/******** BOUTTON *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col xs={12} sm={10} md={8} lg={3} xl={3}>
+              <Col xs={12} sm={8} md={8} lg={8} xl={8}>
                 <Form.Group>
                   <Col sm="12">
-                    <Link
+                    <Button
+                      onClick={Subscribe}
                       id="buttonInscrire"
+                      as="input"
+                      value="S'inscrire"
                       className="justify-content-sm-center"
-                      to="/home"
-                    >
-                      S'inscrire
-                    </Link>
+                    ></Button>
                   </Col>
                 </Form.Group>
               </Col>
