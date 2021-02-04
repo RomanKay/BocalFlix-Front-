@@ -1,18 +1,25 @@
 import "./Nav.css";
 
 function Nav() {
-  return <div className="nav">
-      <img src="Images\bocalLogo.png" alt=""/>
-      <ul className="nav-links">
+  return (
+    
+  <div className="navsContent">
+       <img id="LogoHome"src="Images\bocalLogo.png" alt=""/>
+     
+   
+      <ul id="navigation">
           <li> <a href="#">Acceuil</a> </li>
           <li> <a href="#">Film</a> </li>
           <li> <a href="#">Série</a> </li>
-          <li> <a href="#">Documentaire</a> </li>
+          <li> <a href="#">Manga</a> </li>
+          
       </ul>
-      <div className="Search">
-          <input type="text" placeholder="recherche"/>
+      <div id="Search">
+          <input type="text" placeholder="Rechercher"/>
       </div>
-  </div>;
-}
+      </div>
+  
+
+  )}
 
 export default Nav;
