@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  position: absolute;
+  top: 29%;
+  left: 39%;
+  height: 420px;
+  width: 370px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: rgb(223, 223, 223);
+  font-family: sans-serif;
+}
+
+.TitleForm {
+  margin-left: 7px;
+}
+
+input {
+  padding: 18px 20px;
+  margin: 6px;
+  border: none;
+  background-color: #202020;
+  border-radius: 4px;
+  opacity: 0.7;
+  outline: none;
+  cursor: pointer;
+  color: rgb(240, 240, 240);
+}
+
+input[type="submit"] {
+  background-color: rgb(207, 4, 4);
+  color: #fff;
+  text-transform: uppercase;
+  transition: all 0.5s ease-out;
+}
+input[type="submit"]:hover {
+  background-color: rgb(131, 4, 4);
+  transition: all 0.5s ease-out;
+}
+input[type="text"]:hover {
+  background-color: #3b3a3a;
+
+  transition: all 0.5s ease-out;
+}
+
+.Visite {
+  margin-left: 6px;
+  padding-top: 4px;
+  margin-right: 36px;
+}
+
+.Visite a {
+  color: rgb(207, 4, 4);
+  font-weight: 600;
+}
+
+#Social {
+  display: flex;
+  width: 323px;
+  height: 59px;
+  padding-left: 4px;
+}
+
+#Social img {
+  width: 23px;
+  height: 25px;
+}
+
+#Social a {
+  padding-left: 10px;
+  padding-top: 3px;
+  color: rgb(122, 118, 118);
+}
+
+#Social a:hover {
+  color: rgb(0, 97, 179);
+}
