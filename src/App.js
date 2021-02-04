@@ -7,6 +7,7 @@ import Inscription from "./PageInscription/Inscription";
 import LogoBocal from "./LoginPage/LogoBocal.js";
 import BackgroundLogin from "./LoginPage/BackgroundLogin.js";
 import LoginForm from "./LoginPage/LoginForm.js";
+// Import Page de co //
 
 function App() {
   return (
