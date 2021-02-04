@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 0% 30% 25% 30%;
+
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
   border-radius: 10px;
@@ -50,10 +50,10 @@
   padding: 0% 2% 0% 2%;
   color: rgba(255, 255, 255, 0.85);
 }
-
-body {
+#containerInscription {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("./Images/background.jpeg");
-  background-size: auto, cover;
+  background-size: cover;
+  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }

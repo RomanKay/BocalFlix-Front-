@@ -1,24 +1,27 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 // Import Formulaire Inscription//
 import Inscription from "./PageInscription/Inscription";
 // Import Page de co //
-import LogoBocal from "./LoginPage/LogoBocal.js";
-import BackgroundLogin from "./LoginPage/BackgroundLogin.js";
 import LoginForm from "./LoginPage/LoginForm.js";
-// Import Page de co //
+import Home from "./HomePage/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="AppHeader">
-        <LogoBocal />
-        <BackgroundLogin />
-        <LoginForm />
-        <Inscription />
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={LoginForm} />
+        <Route path="/inscription" exact component={Inscription} />
+        <Route path="/home" exact component={Home} />
+
+        <Route path="*">
+          <h1>404</h1>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
