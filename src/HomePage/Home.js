@@ -4,6 +4,8 @@ import "./home.css";
 import Nav from "../Nav&Logo/Nav.js";
 import Slider from "../Carousel/Carousel";
 import FilmSelect from "../Card/Card.js";
+import { Form } from "react-bootstrap";
+import Footer from "../Footer/Footer";
 
 function Home() {
   return (
@@ -11,6 +13,7 @@ function Home() {
       <Nav />
       <Slider />
       <FilmSelect />
+      <Footer />
     </div>
   );
 }
