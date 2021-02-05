@@ -1,3 +1,22 @@
-.Content {
-  height: 200px;
+body {
+  background: #1a1818;
+}
+
+.Film {
+  color: #fff;
+  padding-left: 20px;
+  padding-top: 10px;
+  letter-spacing: 2px;
+}
+
+.row {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.LogoBocals {
+  width: 90px;
+  position: absolute;
+  left: 5%;
+  top: 8%;
 }
