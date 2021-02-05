@@ -4,14 +4,15 @@ body {
 
 .Film {
   color: #fff;
-  padding-left: 20px;
-  padding-top: 10px;
+  padding-left: 8px;
+  padding-top: 6px;
   letter-spacing: 2px;
 }
 
 .row {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
 }
 
 .LogoBocals {
@@ -19,4 +20,13 @@ body {
   position: absolute;
   left: 5%;
   top: 8%;
+}
+
+.CardsEffect {
+  transition: transform 0.7s; /* Animation */
+  border: 1px black;
+}
+
+.CardsEffect:hover {
+  transform: scale(0.9);
 }
