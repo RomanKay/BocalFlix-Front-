@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 function FilmCard(props) {
   return (
     <Col sm="6" md="4" lg="3" xl="3">
-      <Card className="CardsEffect">
+      <Card onClick={props.onClick} className="CardsEffect">
         <Card.Img
           className="BackImg"
           id="ImgCard"

@@ -6,7 +6,9 @@
     ],
     "series": [
         {"title":"Avenger","img":"avenger.jpg"},
-        {"title":"Breaking bad","img":"img1.jpg"}
+        {"title":"Big","img":"bigbang.webp"},
+        {"title":"Modern","img":"modern.webp"},
+        {"title":"Prison","img":"prison.webp"}
        
     ]
    
