@@ -1,5 +1,5 @@
 #buttonInscrire {
-  background-color: rgb(220, 47, 47);
+  background-color: rgb(131, 4, 4);
   border-radius: 3px;
   text-align: center;
   font-size: 1.7em;
@@ -7,6 +7,7 @@
   width: 100%;
   margin: 15px 0 0 0;
   border: none;
+  letter-spacing: 3px;
 }
 #formInscriptionContent {
   display: flex;
@@ -15,12 +16,16 @@
   background-color: rgba(0, 0, 0, 0.75);
   color: white;
   border-radius: 10px;
-  padding-top: 4%;
+  padding-top: 5%;
+  margin-top: 15%;
+}
+#inscriptionLogo {
+  width: 16%;
 }
 
 #containerLogoF {
   padding-left: 3%;
-  padding-top: 1%;
+  padding-top: 2%;
   margin: 0;
 
   font-size: 1.5em;
@@ -31,6 +36,7 @@
 
 #buttonIdentity {
   background-color: rgb(220, 47, 47);
+  opacity: 0.7;
   border-radius: 5px;
   text-align: center;
   font-size: 1em;
@@ -55,13 +61,18 @@
   color: rgba(255, 255, 255, 0.85);
 }
 #containerInscription {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./Images/background.jpeg");
+  background: url("../LoginPage/ImagesB/bg33.jpg");
   background-size: cover;
-  min-height: 100vh;
+  min-height: 140vh;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 #rowForm {
   margin: 0;
+}
+
+.inputSubscribe {
+  border-radius: 4px;
+  opacity: 0.7;
+  cursor: pointer;
 }

@@ -1,0 +1,14 @@
+#marvel {
+  height: 320px;
+  background: url("./Images/marvel.jpg") center no-repeat;
+}
+
+#horror {
+  background: url("./Images/dracula.jpg") center no-repeat;
+  height: 320px;
+}
+
+#starwars {
+  height: 320px;
+  background: url("./Images/Star_Wars.svg") center no-repeat;
+}

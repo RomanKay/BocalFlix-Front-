@@ -7,21 +7,21 @@ import StarWars from "./Images/Star_Wars.svg";
 function Slider() {
   return (
     <Carousel>
-      <Carousel.Item>
-        <img className="d-block w-100" src={horror} alt="First slide" />
-        <Carousel.Caption></Carousel.Caption>
+      <Carousel.Item id="horror">
+        {/* <img className="d-block w-100" src={horror} alt="First slide" /> */}
+        <Carousel.Caption />
       </Carousel.Item>
-      <Carousel.Item>
-        <img className="d-block w-100" src={Marvel} alt="Third slide" />
 
+      <Carousel.Item id="marvel">
+        {/* <img className="d-block w-100" src={Marvel} alt="Third slide" /> */}
         <Carousel.Caption>
           <p>Découvrez la licence Marvel.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
-        <img className="d-block w-100" src={StarWars} alt="Third slide" />
 
-        <Carousel.Caption></Carousel.Caption>
+      <Carousel.Item id="starwars">
+        {/* <img className="d-block w-100" src={StarWars} alt="Third slide" /> */}
+        <Carousel.Caption />
       </Carousel.Item>
     </Carousel>
   );

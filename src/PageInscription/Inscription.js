@@ -72,14 +72,15 @@ function Inscription(props) {
         </Form.Group>
       </div>
       <Row id="rowForm" className="justify-content-sm-center">
-        <Col xs={12} sm={10} md={8} lg={6} xl={6}>
+        <Col xs={12} sm={8} md={8} lg={6} xl={4}>
           <Form id="formInscriptionContent">
             <h2 className="inscriptionTitle">Informations personnels</h2>
             {/******** NOM - PRENOM *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col xs={12} sm="4">
+              <Col xs={12} sm="4" xl={5}>
                 <Form.Label>Nom : </Form.Label>
                 <Form.Control
+                  className="inputSubscribe"
                   type="text"
                   onChange={handleInput}
                   value={newUser.nom}
@@ -87,9 +88,10 @@ function Inscription(props) {
                   placeholder="Votre nom..."
                 />
               </Col>
-              <Col sm="4">
+              <Col sm="4" xl={5}>
                 <Form.Label>Prénom: </Form.Label>
                 <Form.Control
+                  className="inputSubscribe"
                   type="text"
                   value={newUser.prenom}
                   onChange={handleInput}
@@ -100,10 +102,11 @@ function Inscription(props) {
             </Form.Row>
             {/******** Email *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col sm="8">
+              <Col sm="8" xl={10}>
                 <Form.Group>
                   <Form.Label>Email : </Form.Label>
                   <Form.Control
+                    className="inputSubscribe"
                     onChange={handleInput}
                     type="email"
                     value={newUser.mail}
@@ -115,10 +118,11 @@ function Inscription(props) {
             </Form.Row>
             {/******** MOT DE PASSE *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col sm="8">
+              <Col sm="8" xl={10}>
                 <Form.Group>
                   <Form.Label>Mot de passe : </Form.Label>
                   <Form.Control
+                    className="inputSubscribe"
                     value={newUser.pass}
                     onChange={handleInput}
                     name="pass"
@@ -157,10 +161,10 @@ function Inscription(props) {
 
             {/********  CARTE *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col sm="6">
+              <Col sm={6} xl={10}>
                 <Form.Group controlId="exampleForm.ControlSelect1">
                   <Form.Label>Type de carte :</Form.Label>
-                  <Form.Control as="select">
+                  <Form.Control as="select" className="inputSubscribe">
                     <option>Visa</option>
                     <option>MasterCard</option>
                   </Form.Control>
@@ -170,9 +174,10 @@ function Inscription(props) {
 
             {/******** NUMERO CARTE *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col sm="6">
+              <Col sm="6" xl={7}>
                 <Form.Label>Numéro de carte : </Form.Label>
                 <Form.Control
+                  className="inputSubscribe"
                   value={newUser.carte}
                   type="text"
                   onChange={handleInput}
@@ -180,9 +185,10 @@ function Inscription(props) {
                   placeholder="294465645..."
                 />
               </Col>
-              <Col sm="2">
+              <Col sm="2" xl={3}>
                 <Form.Label>CVV : </Form.Label>
                 <Form.Control
+                  className="inputSubscribe"
                   value={newUser.cvv}
                   type="text"
                   onChange={handleInput}
@@ -194,9 +200,9 @@ function Inscription(props) {
 
             {/******** BOUTTON *********/}
             <Form.Row className="justify-content-sm-center">
-              <Col xs={12} sm={8} md={8} lg={8} xl={8}>
+              <Col xs={12} sm={8} md={8} lg={8} xl={11}>
                 <Form.Group>
-                  <Col sm="12">
+                  <Col sm="12" xl="12">
                     <Button
                       onClick={Subscribe}
                       id="buttonInscrire"
