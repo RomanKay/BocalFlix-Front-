@@ -1,9 +1,17 @@
-#marvel {
-  margin: auto;
+.slider {
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
 }
 
-#horror {
+.horror {
+  background-image: url("./carousel/dracula.jpg");
 }
 
-#starwars {
+.marvel {
+  background-image: url("./carousel/marvel.jpg");
+}
+
+.starwars {
+  background-image: url("./carousel/Star_Wars.svg");
 }
