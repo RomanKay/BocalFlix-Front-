@@ -1,0 +1,6 @@
+{
+    "movies": [
+        {"title":"Avenger","img":"avenger.jpg"},
+        {"title":"Breaking bad","img":"img1.jpg"}
+    ]
+}
