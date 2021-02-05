@@ -2,5 +2,16 @@
     "movies": [
         {"title":"Avenger","img":"avenger.jpg"},
         {"title":"Breaking bad","img":"img1.jpg"}
+       
+    ],
+    "series": [
+        {"title":"Avenger","img":"avenger.jpg"},
+        {"title":"Breaking bad","img":"img1.jpg"}
+       
     ]
+   
+
+
+
 }
+
