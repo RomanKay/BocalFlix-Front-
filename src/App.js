@@ -8,6 +8,7 @@ import Inscription from "./PageInscription/Inscription";
 // Import Page de co //
 import LoginForm from "./LoginPage/LoginForm.js";
 import Home from "./HomePage/Home";
+import Iron from "./iron/iron.js";
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
         <Route path="/inscription" exact component={Inscription} />
         <Route path="/home" exact component={Home} />
 
-        <Route path="*">
-          <h1>404</h1>
+        <Route path="*" exact component={Iron}>
+          <Iron />
         </Route>
       </Switch>
     </Router>

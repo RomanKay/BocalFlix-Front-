@@ -48,7 +48,7 @@ function FormLog(props) {
           />
           <input
             className="inP"
-            type="text"
+            type="password"
             name="password"
             onChange={handleInput}
             value={newCo.password}

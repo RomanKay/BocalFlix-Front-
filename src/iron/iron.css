@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kreon:wght@400;500&family=Poiret+One&display=swap");
+.error {
+  height: 100vh;
+  background-color: red;
+  background-image: url("./IronM.jpg");
+  background-repeat: no-repeat;
+  background-image: cover;
+}
+
+#IronT {
+  position: absolute;
+  bottom: 25%;
+  height: 171px;
+  left: 16%;
+  font-size: 26px;
+
+  font-family: "Poiret One", cursive;
+  color: #74b1dd;
+  font-style: italic;
+}
+
+#Erreur {
+  color: #eac96c;
+  font-family: "Kreon", serif;
+  position: absolute;
+  left: 60%;
+  top: 15%;
+  letter-spacing: 2px;
+  font-size: 80px;
+}
+
+#Erreur:after {
+  position: absolute;
+  height: 1px;
+  margin: 0 auto;
+  content: "";
+  left: 100%;
+  right: 0%;
+  width: 99%;
+  background-color: #bb4646;
+  left: 0;
+  bottom: 10px; /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+}
+
+.Introuvable {
+  position: absolute;
+  left: 57%;
+  bottom: 67%;
+  font-size: 26px;
+
+  font-family: "Kreon", serif;
+  color: #74b1dd;
+}
+
+.Ibutton {
+  font-family: "Kreon", serif;
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  left: 62%;
+  padding: 16px 76px;
+  margin: 6px;
+  border: none;
+  background-color: rgb(131, 4, 4);
+  border-radius: 4px;
+  opacity: 0.9;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+.Ibutton:hover {
+  background-color: #581919;
+  transition: all 0.5s ease-out;
+}
