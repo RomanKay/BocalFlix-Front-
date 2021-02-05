@@ -10,9 +10,7 @@ function Slider() {
       </Carousel.Item>
 
       <Carousel.Item className="slider marvel">
-        <Carousel.Caption>
-          <p>Découvrez la licence Marvel.</p>
-        </Carousel.Caption>
+        <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
 
       <Carousel.Item className="slider starwars">
