@@ -1,7 +1,34 @@
 import "./LoginForm.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-function FormLog() {
+/* Variable d'état */
+
+//Formulaire
+function FormLog(props) {
+  let [newCo, setCo] = useState({
+    mail: "",
+    password: "",
+  });
+
+  //Mise a jour des users
+  function handleInput(e) {
+    setCo({ ...newCo, [e.target.name]: e.target.value });
+    console.log(e.target.value);
+  }
+  // Fonction s'inscrire
+  function Subscribe(e) {
+    e.preventDefault();
+    if (
+      (newCo.password, newCo.mail != "") &
+      (newCo.password, newCo.mail != undefined)
+    ) {
+      props.history.push("/home");
+    } else {
+      alert("Remplir tout les champs");
+    }
+  }
+
   return (
     <div className="content">
       <div id="FlixLogo">
@@ -15,16 +42,24 @@ function FormLog() {
             type="text"
             className="inP"
             name="mail"
-            id=""
+            onChange={handleInput}
+            value={newCo.mail}
             placeholder="Entrez votre email"
           />
           <input
             className="inP"
             type="text"
-            name="Mot de passe"
+            name="password"
+            onChange={handleInput}
+            value={newCo.password}
             placeholder="Entrez votre mot de passe"
           />
-          <input className="inP" type="submit" value="connexion" />
+          <input
+            className="inP"
+            type="submit"
+            value="connexion"
+            onClick={Subscribe}
+          />
           <span className="box">
             <input className="LogInp" type="checkbox" id="save" />
             <label htmlFor="save">Se souvenir de moi</label>
@@ -45,5 +80,4 @@ function FormLog() {
     </div>
   );
 }
-
 export default FormLog;
