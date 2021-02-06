@@ -43,16 +43,16 @@ function FilmSelect() {
   return (
     <div className="Content">
       <h2 className="Categorie">Film</h2>
-      <Row>{renderFilmCards()}</Row>
+      <Row className="rowContentF">{renderFilmCards()}</Row>
 
       <h2 className="Categorie">Serie</h2>
-      <Row>{renderSerieCards()}</Row>
+      <Row className="rowContentF">{renderSerieCards()}</Row>
 
       <h2 className="Categorie">Horreur</h2>
-      <Row>{renderHorrorCards()}</Row>
+      <Row className="rowContentF"> {renderHorrorCards()}</Row>
 
       <h2 className="Categorie">Marvel</h2>
-      <Row>{renderMarvelCards()}</Row>
+      <Row className="rowContentF">{renderMarvelCards()}</Row>
 
       <Modal
         onHide={function () {
