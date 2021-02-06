@@ -14,7 +14,7 @@ body {
   font-weight: 600;
 }
 
-.row {
+#BoxCards {
   padding-left: 40px;
   padding-right: 40px;
   margin: 0;
