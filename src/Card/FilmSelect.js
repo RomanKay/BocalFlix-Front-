@@ -46,13 +46,13 @@ function FilmSelect() {
       <Row id="BoxCards">{renderFilmCards()}</Row>
 
       <h2 className="Categorie">Nos series</h2>
-      <Row>{renderSerieCards()}</Row>
+      <Row id="BoxCards">{renderSerieCards()}</Row>
 
       <h2 className="Categorie">Notre categorie Horreur</h2>
-      <Row>{renderHorrorCards()}</Row>
+      <Row id="BoxCards">{renderHorrorCards()}</Row>
 
       <h2 className="Categorie">Notre selection pour Marvel</h2>
-      <Row>{renderMarvelCards()}</Row>
+      <Row id="BoxCards">{renderMarvelCards()}</Row>
 
       <Modal
         onHide={function () {
