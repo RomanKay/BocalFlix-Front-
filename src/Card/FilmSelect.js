@@ -3,6 +3,8 @@ import Row from "react-bootstrap/Row";
 import FilmCard from "./Card.js";
 import { movies } from "../movies.json";
 import { series } from "../movies.json";
+import { horrors } from "../movies.json";
+import { marvel } from "../movies.json";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 
@@ -20,6 +22,18 @@ function FilmSelect() {
     });
   }
 
+  function renderHorrorCards() {
+    return horrors.map(function (horror) {
+      return <FilmCard onClick={openModal} img={horror.img} />;
+    });
+  }
+
+  function renderMarvelCards() {
+    return marvel.map(function (marvels) {
+      return <FilmCard onClick={openModal} img={marvels.img} />;
+    });
+  }
+
   // Afficher Modal
 
   function openModal() {
@@ -33,6 +47,12 @@ function FilmSelect() {
 
       <h2 className="Categorie">Serie</h2>
       <Row>{renderSerieCards()}</Row>
+
+      <h2 className="Categorie">Horreur</h2>
+      <Row>{renderHorrorCards()}</Row>
+
+      <h2 className="Categorie">Marvel</h2>
+      <Row>{renderMarvelCards()}</Row>
 
       <Modal
         onHide={function () {
