@@ -1,7 +1,8 @@
 {
     "movies": [
         {"title":"Avenger","img":"avenger.jpg"},
-        {"title":"Joker","img":"Joker.jpg"}
+        {"title":"Joker","img":"Joker.jpg"},
+        {"title":"Pirate","img":"pirate.jpg"}
        
     ],
     "series": [
