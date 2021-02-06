@@ -2,16 +2,42 @@
     "movies": [
         {"title":"Avenger","img":"avenger.jpg"},
         {"title":"Joker","img":"Joker.jpg"},
-        {"title":"Pirate","img":"pirate.jpg"}
+        {"title":"Matrix","img":"matrix.webp"},
+        {"title":"Social","img":"network.webp"}
+        
+        
        
     ],
+
+    "marvel":[
+        {"title":"avenger","img":"avenger.jpg"},
+        {"title":"SpiderMan","img":"spider.jpg"},        
+        {"title":"Spider1","img":"spider1.webp"},
+        {"title":"Spider3","img":"spider3.jpg"}
+        
+
+
+    ],
+
+
     "series": [
-        {"title":"Avenger","img":"avenger.jpg"},
         {"title":"Big","img":"bigbang.webp"},
+        {"title":"Salvation","img":"slavation.webp"},
         {"title":"Modern","img":"modern.webp"},
         {"title":"Prison","img":"prison.webp"}
+        
        
+    ],
+
+    "horrors":[
+        {"title":"shining","img":"shining.webp"},
+        {"title":"split","img":"split.webp"},
+        {"title":"house","img":"house.webp"},
+        {"title":"noir","img":"noir.webp"}
     ]
+
+
+
    
 
 

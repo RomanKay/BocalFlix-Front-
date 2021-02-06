@@ -1,11 +1,12 @@
 body {
-  background: #1a1818;
+  background: #040404;
 }
 
 .Categorie {
   color: #fff;
-  padding-left: 8px;
-  padding-top: 6px;
+  padding-left: 10px;
+  padding-top: 14px;
+  padding-bottom: 5px;
   letter-spacing: 2px;
 }
 
@@ -13,13 +14,14 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0;
+  height: 163px;
 }
 
 .LogoBocals {
-  width: 90px;
+  width: 55px;
   position: absolute;
-  left: 5%;
-  top: 8%;
+  left: 1%;
+  top: 1%;
 }
 
 .CardsEffect {

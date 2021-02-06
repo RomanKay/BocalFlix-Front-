@@ -3,7 +3,7 @@ import "./footer.css";
 function Footer() {
   return (
     <div id="footerContainer">
-      <p>© 2021 Bocalflix</p>
+      <p className="copyright">© 2021 Bocalflix</p>
     </div>
   );
 }
