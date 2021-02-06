@@ -61,8 +61,10 @@ function FormLog(props) {
             onClick={Subscribe}
           />
           <span className="box">
-            <input className="LogInp" type="checkbox" id="save" />
-            <label htmlFor="save">Se souvenir de moi</label>
+            <input type="checkbox" id="Save" />
+            <label htmlFor="" id="remember">
+              Se souvenir de moi
+            </label>
           </span>
 
           <p className="Visite">

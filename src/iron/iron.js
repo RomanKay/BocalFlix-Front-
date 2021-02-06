@@ -10,11 +10,9 @@ function Iron() {
         <p className="Introuvable">
           la page que vous recherchez semble introuvale
         </p>
-        <input
-          className="Ibutton"
-          type="submit"
-          value="Retour vers l'acceuil"
-        />
+        <Link to="/home" className="Ibutton" type="submit">
+          Retour vers l'acceuil
+        </Link>
       </div>
     </div>
   );

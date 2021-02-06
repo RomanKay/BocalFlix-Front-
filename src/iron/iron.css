@@ -70,6 +70,7 @@
   letter-spacing: 1px;
   font-size: 20px;
   color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 .Ibutton:hover {
   background-color: #581919;

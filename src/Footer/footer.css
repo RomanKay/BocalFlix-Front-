@@ -1,9 +1,15 @@
 #footerContainer {
-  background-color: rgb(26, 24, 24);
+  background-color: rgb(10 10 10);
   color: white;
   font-family: "Poppins", sans-serif;
   height: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+.copyright {
+  text-align: center;
+  color: #737373;
+  font-weight: lighter;
 }

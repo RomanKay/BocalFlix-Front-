@@ -3,18 +3,19 @@ body {
 }
 
 .Categorie {
-  color: #fff;
+  color: rgb(236, 236, 236);
   padding-left: 10px;
-  padding-top: 14px;
+  padding-top: 11px;
   padding-bottom: 5px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-family: serif;
 }
 
 .row {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0;
-  height: 163px;
+  height: 158px;
 }
 
 .LogoBocals {
