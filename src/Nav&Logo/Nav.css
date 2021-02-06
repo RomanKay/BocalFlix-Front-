@@ -18,8 +18,8 @@
 #navigation {
   display: flex;
   position: absolute;
-  left: 35%;
-  top: 30px;
+  left: 33%;
+  top: 29px;
 }
 #navigation li {
   list-style: none;
@@ -27,12 +27,12 @@
 }
 
 #navigation li a {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 24px;
   padding: auto;
 }
 
@@ -59,4 +59,12 @@
   outline: none;
   border-radius: 4px;
   padding-left: 50px;
+}
+
+.Acceuil {
+  padding-right: 45px;
+}
+
+#navigation a:hover {
+  color: rgb(255, 220, 220);
 }
