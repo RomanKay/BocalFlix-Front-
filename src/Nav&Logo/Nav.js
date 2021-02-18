@@ -26,8 +26,9 @@ function Nav() {
           <a href="#">Manga</a>{" "}
         </li>
       </ul>
-      <div id="Search">
-        <input type="text" placeholder="Rechercher" />
+      <div id="UserSection">
+        <p className="User">Roman</p>
+        <img src="Images\UserIcon\user.1.png" alt=""/>
       </div>
     </div>
   );
