@@ -56,11 +56,13 @@ function FilmSelect() {
       });
   }
 
-  // function renderMarvelCards() {
-  //   return movies.marvel.map(function (marvels) {
-  //     return <FilmCard onClick={openModal} img={marvels.img} />;
-  //   });
-  // }
+  function renderHorrorCards() {
+    return movies
+      .filter((movie) => movie.category.includes("Horror"))
+      .map(function (movie) {
+        return <FilmCard openModal={openModal} data={movie} />;
+      });
+  }
 
   // Afficher Modal
 
@@ -77,8 +79,8 @@ function FilmSelect() {
       <h2 className="Categorie">Nos series</h2>
       <Row id="BoxCards">{renderSerieCards()}</Row>
 
-      {/* <h2 className="Categorie">Notre categorie Horreur</h2>
-      <Row id="BoxCards">{renderHorrorCards()}</Row> */}
+      <h2 className="Categorie">Notre categorie Horreur</h2>
+      <Row id="BoxCards">{renderHorrorCards()}</Row>
 
       <h2 className="Categorie">Notre selection pour Marvel</h2>
       <Row id="BoxCards">{renderMarvelCards()}</Row>
@@ -99,7 +101,7 @@ function FilmSelect() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>{modalData.title}</p>
+          <p>{modalData.description}</p>
         </Modal.Body>
         <Modal.Footer id="svgModal">
           <svg
