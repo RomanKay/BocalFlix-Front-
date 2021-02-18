@@ -6,50 +6,79 @@ import { series } from "../movies.json";
 import { horrors } from "../movies.json";
 import { marvel } from "../movies.json";
 import Modal from "react-bootstrap/Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function FilmSelect() {
+  /* Variable d'état */
+  const [movies, setMovie] = useState([]);
+  const [modalData, setModalData] = useState({});
+
+  /* Lors du premier affichage du composant App */
+  useEffect(getMovie, []);
+
+  /**
+   * Récupération des films
+   */
+  async function getMovie() {
+    const options = {
+      method: "GET",
+    };
+
+    const response = await fetch("http://localhost:8000/movies", options);
+
+    const movieData = await response.json();
+
+    setMovie(movieData);
+  }
+
   let [showModal, setShowModal] = useState(false);
 
-  function renderFilmCards() {
-    return movies.map(function (movie) {
-      return <FilmCard onClick={openModal} img={movie.img} />;
-    });
+  function renderMovies() {
+    return movies
+      .filter((movie) => movie.category.includes("Action"))
+      .map(function (movie) {
+        return <FilmCard openModal={openModal} data={movie} />;
+      });
   }
-  function renderSerieCards() {
-    return series.map(function (serie) {
-      return <FilmCard onClick={openModal} img={serie.img} />;
-    });
-  }
-
-  function renderHorrorCards() {
-    return horrors.map(function (horror) {
-      return <FilmCard onClick={openModal} img={horror.img} />;
-    });
-  }
-
   function renderMarvelCards() {
-    return marvel.map(function (marvels) {
-      return <FilmCard onClick={openModal} img={marvels.img} />;
-    });
+    return movies
+      .filter((movie) => movie.category.includes("Marvel"))
+      .map(function (movie) {
+        return <FilmCard openModal={openModal} data={movie} />;
+      });
   }
+
+  function renderSerieCards() {
+    return movies
+      .filter((movie) => movie.category.includes("Series"))
+      .map(function (movie) {
+        return <FilmCard openModal={openModal} data={movie} />;
+      });
+  }
+
+  // function renderMarvelCards() {
+  //   return movies.marvel.map(function (marvels) {
+  //     return <FilmCard onClick={openModal} img={marvels.img} />;
+  //   });
+  // }
 
   // Afficher Modal
 
-  function openModal() {
+  function openModal(data) {
     setShowModal(true);
+    setModalData(data);
   }
 
   return (
     <div className="Content">
       <h2 className="Categorie">Notre selection de film</h2>
-      <Row id="BoxCards">{renderFilmCards()}</Row>
+      <Row id="BoxCards">{renderMovies()}</Row>
 
       <h2 className="Categorie">Nos series</h2>
       <Row id="BoxCards">{renderSerieCards()}</Row>
 
-      <h2 className="Categorie">Notre categorie Horreur</h2>
-      <Row id="BoxCards">{renderHorrorCards()}</Row>
+      {/* <h2 className="Categorie">Notre categorie Horreur</h2>
+      <Row id="BoxCards">{renderHorrorCards()}</Row> */}
 
       <h2 className="Categorie">Notre selection pour Marvel</h2>
       <Row id="BoxCards">{renderMarvelCards()}</Row>
@@ -66,15 +95,11 @@ function FilmSelect() {
       >
         <Modal.Header className="closeModal" closeButton>
           <Modal.Title id="topModal">
-            <img src="Images/Card/arrow.jpg" alt="" />
+            <img src={"http://localhost:8000" + modalData.image} alt="" />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </p>
+          <p>{modalData.title}</p>
         </Modal.Body>
         <Modal.Footer id="svgModal">
           <svg
