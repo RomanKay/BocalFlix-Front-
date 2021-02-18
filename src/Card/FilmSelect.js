@@ -1,10 +1,6 @@
 import "./FilmSelect.css";
 import Row from "react-bootstrap/Row";
 import FilmCard from "./Card.js";
-import { movies } from "../movies.json";
-import { series } from "../movies.json";
-import { horrors } from "../movies.json";
-import { marvel } from "../movies.json";
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 

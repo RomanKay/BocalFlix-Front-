@@ -9,15 +9,32 @@ import { useState } from "react";
 import "./inscription.css";
 
 function Inscription(props) {
+  // States //
   /* Variable d'état */
   let [newUser, setUser] = useState({
-    nom: "",
-    prenom: "",
+    lastName: "",
+    firstName: "",
     mail: "",
     pass: "",
-    carte: "",
+    subscription: "",
+    cardType: "",
+    cardNumber: "",
     cvv: "",
   });
+
+  // Envoie des données User //
+  async function sendUserData(e) {
+    e.preventDefault();
+    const options = {
+      method: "POST",
+      body: JSON.stringify(newUser),
+      headers: { "content-type": "application/json" },
+    };
+
+    const response = await fetch("http://localhost:8000/subscribe", options);
+    const responseData = await response.json();
+    console.log(responseData);
+  }
 
   //Mise a jour des valeur user
   function handleInput(e) {
@@ -30,17 +47,21 @@ function Inscription(props) {
     e.preventDefault();
     console.log(newUser);
     if (
-      (newUser.nom,
-      newUser.prenom,
+      (newUser.lastName,
+      newUser.firstName,
       newUser.pass,
+      newUser.subscription,
       newUser.mail,
       newUser.carte,
+      newUser.cardNumber,
       newUser.cvv != "") &
-      (newUser.nom,
-      newUser.prenom,
+      (newUser.lastName,
+      newUser.firstName,
       newUser.pass,
+      newUser.subscription,
       newUser.mail,
       newUser.carte,
+      newUser.cardNumber,
       newUser.cvv != undefined)
     ) {
       props.history.push("/home");
@@ -83,8 +104,8 @@ function Inscription(props) {
                   className="inputSubscribe"
                   type="text"
                   onChange={handleInput}
-                  value={newUser.nom}
-                  name="nom"
+                  value={newUser.lastName}
+                  name="lastName"
                   placeholder="Votre nom..."
                 />
               </Col>
@@ -93,9 +114,9 @@ function Inscription(props) {
                 <Form.Control
                   className="inputSubscribe"
                   type="text"
-                  value={newUser.prenom}
+                  value={newUser.firstName}
                   onChange={handleInput}
-                  name="prenom"
+                  name="firstName"
                   placeholder="Votre prénom..."
                 />
               </Col>
@@ -143,13 +164,17 @@ function Inscription(props) {
                     <Form.Check
                       type="radio"
                       label="Un écran - 9,90 €"
-                      name="formHorizontalRadios"
+                      name="subscription"
+                      onChange={handleInput}
+                      value="9.90€"
                       id="formHorizontalRadios1"
                     />
                     <Form.Check
                       type="radio"
                       label="Quatres écrans - 14,90 €"
-                      name="formHorizontalRadios"
+                      name="subscription"
+                      onChange={handleInput}
+                      value="14.90€"
                       id="formHorizontalRadios2"
                     />
                   </Col>
@@ -177,7 +202,12 @@ function Inscription(props) {
                       <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z" />
                     </svg>
                   </Form.Label>
-                  <Form.Control as="select" className="inputSubscribe">
+                  <Form.Control
+                    name="cardType"
+                    onChange={handleInput}
+                    as="select"
+                    className="inputSubscribe"
+                  >
                     <option>Visa</option>
                     <option>MasterCard</option>
                   </Form.Control>
@@ -191,10 +221,12 @@ function Inscription(props) {
                 <Form.Label>Numéro de carte : </Form.Label>
                 <Form.Control
                   className="inputSubscribe"
-                  value={newUser.carte}
-                  type="text"
+                  value={newUser.cardNumber}
+                  type="number"
+                  step="1"
+                  max="9999999999999999"
                   onChange={handleInput}
-                  name="carte"
+                  name="cardNumber"
                   placeholder="294465645 ..."
                 />
               </Col>
@@ -203,7 +235,9 @@ function Inscription(props) {
                 <Form.Control
                   className="inputSubscribe"
                   value={newUser.cvv}
-                  type="text"
+                  type="number"
+                  step="1"
+                  max="999"
                   onChange={handleInput}
                   name="cvv"
                   placeholder="294..."
@@ -217,7 +251,7 @@ function Inscription(props) {
                 <Form.Group>
                   <Col sm="12" xl="12">
                     <Button
-                      onClick={Subscribe}
+                      onClick={sendUserData}
                       id="buttonInscrire"
                       type="submit"
                       as="input"
