@@ -3,12 +3,14 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Row";
 import logo from "./Images/logo.png";
-
+import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 import "./inscription.css";
 
 function Inscription(props) {
+  let history = useHistory();
+
   // States //
   /* Variable d'état */
   let [newUser, setUser] = useState({
@@ -34,6 +36,8 @@ function Inscription(props) {
     const response = await fetch("http://localhost:8000/subscribe", options);
     const responseData = await response.json();
     console.log(responseData);
+
+    history.push("/home");
   }
 
   //Mise a jour des valeur user
@@ -209,7 +213,7 @@ function Inscription(props) {
                     className="inputSubscribe"
                   >
                     <option>Visa</option>
-                    <option>MasterCard</option>
+                    <option>Mastercard</option>
                   </Form.Control>
                 </Form.Group>
               </Col>
