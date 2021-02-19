@@ -26,8 +26,11 @@ function FormLog(props) {
 
     const response = await fetch("http://localhost:8000/login", options);
     const responseData = await response.json();
-    console.log(responseData);
-    history.push("/home");
+    if (responseData.success === true) {
+      localStorage.setItem("token", responseData.token);
+      history.push("/home");
+    }
+    console.log(responseData.token);
   }
 
   // Mise à jour des users //
