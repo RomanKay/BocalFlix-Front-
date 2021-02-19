@@ -1,17 +1,36 @@
 import "./LoginForm.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 /* Variable d'état */
 
 //Formulaire
 function FormLog(props) {
+  const history = useHistory();
   let [newCo, setCo] = useState({
     mail: "",
     password: "",
   });
 
-  //Mise a jour des users
+  // Récupération des données UserLogin //
+  async function postloginData(e) {
+    e.preventDefault();
+    const options = {
+      method: "POST",
+      body: JSON.stringify(newCo),
+      headers: { "content-type": "application/json" },
+    };
+
+    // Attente de la réponse du back //
+
+    const response = await fetch("http://localhost:8000/login", options);
+    const responseData = await response.json();
+    console.log(responseData);
+    history.push("/home");
+  }
+
+  //Mise à jour des users
   function handleInput(e) {
     setCo({ ...newCo, [e.target.name]: e.target.value });
     console.log(e.target.value);
@@ -23,7 +42,7 @@ function FormLog(props) {
       (newCo.password, newCo.mail != "") &
       (newCo.password, newCo.mail != undefined)
     ) {
-      props.history.push("/home");
+      props.history.push("/");
     } else {
       alert("Remplir tout les champs");
     }
@@ -49,16 +68,16 @@ function FormLog(props) {
           <input
             className="inP"
             type="password"
-            name="password"
+            name="pass"
             onChange={handleInput}
-            value={newCo.password}
+            value={newCo.pass}
             placeholder="Entrez votre mot de passe"
           />
           <input
             className="inP"
             type="submit"
             value="connexion"
-            onClick={Subscribe}
+            onClick={postloginData}
           />
           <span className="box">
             <input type="checkbox" id="Save" />

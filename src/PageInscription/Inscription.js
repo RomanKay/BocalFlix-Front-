@@ -37,7 +37,7 @@ function Inscription(props) {
     const responseData = await response.json();
     console.log(responseData);
 
-    history.push("/home");
+    history.push("/");
   }
 
   //Mise a jour des valeur user
@@ -68,7 +68,7 @@ function Inscription(props) {
       newUser.cardNumber,
       newUser.cvv != undefined)
     ) {
-      props.history.push("/home");
+      props.history.push("/");
     } else {
       alert("Vous n'avez pas remplie tous les champs");
     }
