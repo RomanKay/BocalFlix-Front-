@@ -8,9 +8,11 @@ function FilmSelect() {
   /* Variable d'état */
   const [movies, setMovie] = useState([]);
   const [modalData, setModalData] = useState({});
+  const [favorites, setFavorites] = useState([]);
 
   /* Lors du premier affichage du composant App */
   useEffect(getMovie, []);
+  useEffect(getFavorites, []);
 
   /**
    * Récupération des films
@@ -27,9 +29,34 @@ function FilmSelect() {
     setMovie(movieData);
   }
 
+  /**
+   * Récupération des films favoris
+   */
+  async function getFavorites() {
+    const token = localStorage.getItem("token");
+    const options = {
+      method: "GET",
+      Authorization: "bearer " + token,
+    };
+
+    const response = await fetch("http://localhost:8000/favorite", options);
+
+    const favoriteData = await response.json();
+
+    setFavorites(favoriteData);
+  }
+
   let [showModal, setShowModal] = useState(false);
 
-  // CAtégories
+  // Catégories
+  function renderFavorites() {
+    return favorites
+      .filter((movie) => movie)
+      .map(function (movie) {
+        return <FilmCard openModal={openModal} data={movie} />;
+      });
+  }
+
   function renderMovies() {
     return movies
       .filter((movie) => movie.category.includes("Action"))
@@ -89,6 +116,9 @@ function FilmSelect() {
 
   return (
     <div className="Content">
+      <h2 className="Categorie">Liste de favoris</h2>
+      <Row id="BoxCards">{renderFavorites()}</Row>
+
       <h2 className="Categorie">Notre selection de film</h2>
       <Row id="BoxCards">{renderMovies()}</Row>
 
