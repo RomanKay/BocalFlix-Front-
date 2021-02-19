@@ -94,7 +94,14 @@ function FilmSelect() {
       >
         <Modal.Header className="closeModal" closeButton>
           <Modal.Title id="topModal">
-            <img src={"http://localhost:8000" + modalData.image} alt="" />
+            <iframe
+              width="350"
+              height="250"
+              src={modalData.video}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
