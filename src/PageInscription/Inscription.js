@@ -46,34 +46,6 @@ function Inscription(props) {
     console.log(e.target.value);
   }
 
-  // Fonction s'inscrire
-  function Subscribe(e) {
-    e.preventDefault();
-    console.log(newUser);
-    if (
-      (newUser.lastName,
-      newUser.firstName,
-      newUser.pass,
-      newUser.subscription,
-      newUser.mail,
-      newUser.carte,
-      newUser.cardNumber,
-      newUser.cvv != "") &
-      (newUser.lastName,
-      newUser.firstName,
-      newUser.pass,
-      newUser.subscription,
-      newUser.mail,
-      newUser.carte,
-      newUser.cardNumber,
-      newUser.cvv != undefined)
-    ) {
-      props.history.push("/");
-    } else {
-      alert("Vous n'avez pas remplie tous les champs");
-    }
-  }
-
   //Lien page login
   function LinkLoginPage(e) {
     e.preventDefault();

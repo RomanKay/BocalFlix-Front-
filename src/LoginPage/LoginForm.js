@@ -30,22 +30,10 @@ function FormLog(props) {
     history.push("/home");
   }
 
-  //Mise à jour des users
+  // Mise à jour des users //
   function handleInput(e) {
     setCo({ ...newCo, [e.target.name]: e.target.value });
     console.log(e.target.value);
-  }
-  // Fonction s'inscrire
-  function Subscribe(e) {
-    e.preventDefault();
-    if (
-      (newCo.password, newCo.mail != "") &
-      (newCo.password, newCo.mail != undefined)
-    ) {
-      props.history.push("/");
-    } else {
-      alert("Remplir tout les champs");
-    }
   }
 
   return (
