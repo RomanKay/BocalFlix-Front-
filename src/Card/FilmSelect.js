@@ -28,6 +28,7 @@ function FilmSelect() {
     const movieData = await response.json();
 
     setMovie(movieData);
+    console.log(movieData);
   }
 
   /**
@@ -51,6 +52,7 @@ function FilmSelect() {
   }
 
   //Event Ajouter un content//
+
   async function addContent(e) {
     e.preventDefault();
     const token = localStorage.getItem("token");
@@ -71,7 +73,9 @@ function FilmSelect() {
 
   // Catégories
   function renderFavorites() {
+    console.log(favorites);
     return favorites
+
       .filter((movie) => movie)
       .map(function (movie) {
         return <FilmCard openModal={openModal} data={movie} />;
