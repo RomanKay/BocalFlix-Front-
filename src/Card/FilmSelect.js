@@ -113,7 +113,7 @@ function FilmSelect() {
     setShowModal(true);
     setModalData(data);
   }
-  console.log(favorites);
+
   return (
     <div className="Content">
       <h2 className="Categorie">Liste de favoris</h2>

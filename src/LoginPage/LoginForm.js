@@ -33,7 +33,7 @@ function FormLog(props) {
     console.log(responseData.token);
   }
 
-  //Mise à jour des users
+  // Mise à jour des users //
   function handleInput(e) {
     setCo({ ...newCo, [e.target.name]: e.target.value });
     console.log(e.target.value);
