@@ -12,7 +12,7 @@ function FilmSelect() {
 
   /* Lors du premier affichage du composant App */
   useEffect(getMovie, []);
-  // useEffect(getFavorites, []);
+  useEffect(getFavorites, []);
 
   let [showModal, setShowModal] = useState(false);
   /**
@@ -28,29 +28,31 @@ function FilmSelect() {
     const movieData = await response.json();
 
     setMovie(movieData);
+    console.log(movieData);
   }
 
   /**
    * Récupération des films favoris
    */
-  // async function getFavorites() {
-  //   const token = localStorage.getItem("token");
-  //   const options = {
-  //     method: "GET",
-  //     headers: {
-  //       Authorization: "bearer " + token,
-  //     },
-  //   };
+  async function getFavorites() {
+    const token = localStorage.getItem("token");
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: "bearer " + token,
+      },
+    };
 
-  //   const response = await fetch("http://localhost:8000/favorite", options);
+    const response = await fetch("http://localhost:8000/favorite", options);
 
-  //   const favoriteData = await response.json();
+    const favoriteData = await response.json();
 
-  //   setFavorites(favoriteData);
-  //   console.log(favoriteData);
-  // }
+    setFavorites(favoriteData);
+    console.log(favoriteData);
+  }
 
   //Event Ajouter un content//
+
   async function addContent(e) {
     e.preventDefault();
     const token = localStorage.getItem("token");
@@ -71,7 +73,9 @@ function FilmSelect() {
 
   // Catégories
   function renderFavorites() {
+    console.log(favorites);
     return favorites
+
       .filter((movie) => movie)
       .map(function (movie) {
         return <FilmCard openModal={openModal} data={movie} />;
