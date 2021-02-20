@@ -4,7 +4,6 @@ import "./home.css";
 import Nav from "../Nav&Logo/Nav.js";
 import Slider from "../Carousel/Carousel";
 import FilmSelect from "../Card/FilmSelect.js";
-import { Form } from "react-bootstrap";
 import Footer from "../Footer/Footer";
 
 function Home() {

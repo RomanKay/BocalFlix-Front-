@@ -39,17 +39,6 @@ function FormLog(props) {
     console.log(e.target.value);
   }
   // Fonction s'inscrire
-  function Subscribe(e) {
-    e.preventDefault();
-    if (
-      (newCo.password, newCo.mail != "") &
-      (newCo.password, newCo.mail != undefined)
-    ) {
-      props.history.push("/");
-    } else {
-      alert("Remplir tout les champs");
-    }
-  }
 
   return (
     <div className="content">

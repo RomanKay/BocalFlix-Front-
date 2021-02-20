@@ -14,6 +14,7 @@ function FilmSelect() {
   useEffect(getMovie, []);
   useEffect(getFavorites, []);
 
+  let [showModal, setShowModal] = useState(false);
   /**
    * Récupération des films
    */
@@ -44,9 +45,27 @@ function FilmSelect() {
     const favoriteData = await response.json();
 
     setFavorites(favoriteData);
+    console.log(favoriteData);
   }
 
-  let [showModal, setShowModal] = useState(false);
+  //Event Ajouter un content//
+  async function addContent(e) {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    const options = {
+      method: "POST",
+      body: JSON.stringify({ movieId: modalData._id }),
+      headers: {
+        "content-type": "application/json",
+        Authorization: "bearer " + token,
+      },
+    };
+
+    const response = await fetch("http://localhost:8000/favorite", options);
+    const favoriteData = await response.json();
+
+    console.log(favoriteData);
+  }
 
   // Catégories
   function renderFavorites() {
@@ -94,26 +113,7 @@ function FilmSelect() {
     setShowModal(true);
     setModalData(data);
   }
-
-  //Event Ajouter un content//
-  async function addContent(e) {
-    e.preventDefault();
-    const token = localStorage.getItem("token");
-    const options = {
-      method: "POST",
-      body: JSON.stringify({ movieId: modalData._id }),
-      headers: {
-        "content-type": "application/json",
-        Authorization: "bearer " + token,
-      },
-    };
-
-    const response = await fetch("http://localhost:8000/favorite", options);
-    const favoriteData = await response.json();
-
-    console.log(favoriteData);
-  }
-
+  console.log(favorites);
   return (
     <div className="Content">
       <h2 className="Categorie">Liste de favoris</h2>
