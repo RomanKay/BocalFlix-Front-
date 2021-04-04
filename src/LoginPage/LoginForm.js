@@ -28,6 +28,7 @@ function FormLog(props) {
     const responseData = await response.json();
     if (responseData.success === true) {
       localStorage.setItem("token", responseData.token);
+
       history.push("/home");
     }
     console.log(responseData.token);
